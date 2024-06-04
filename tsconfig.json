@@ -6,4 +6,4 @@
         "noImplicitAny": true, //any라는 타입이 의도치 않게 발생할 경우 에러를 띄워주는 설정
         "strictNullChecks": true //null
     }
-}
+} 
