@@ -7,3 +7,8 @@
     -> 자동 변환됨. 
     (JS 로 변환하는 compile 과정)
 
+#console.log 출력하는법
+    1.컴파일 : 터미널에 'tsc'명령어 실행
+        - tsc homework.ts
+    2.실행 : 터미널에서 'node' 실행
+        - node homework.js
