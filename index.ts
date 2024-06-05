@@ -1,40 +1,32 @@
-let 이름 : string | number = 1; //타입 엄격하게 관리 가능
+// let 동물 : string |number | undefined; //너무 길다 -> 변수로 뺼수 있음 type
 
-type 내타입 = string|number; //변수 만드는 방법 //union type
-let Name :내타입 = 123;
+// let 동물 : Animal = 'dog'; 이런식으로 사용
 
-function test(x : number){ //함수도 타입지정 가능
-    return x*2
-} 
-
-let rename : any;       //any type => 타입실드 해제문법임.
-rename = 123;
-rename = 'changmok';
-
-let renmae2 : unknown;  //any 랑 같은 의미 /unknown이 조금더 안정성이 있다.
-
-//renmae2 -1    unknown type은 뺄셈을 못한다. 미연에 방지.
+//example
+type Animal = {name : string, age : number };
+let 동물 : Animal = {name : 'dog', age : 10}
 
 
-//function 에다가 type 주는 법
-function test2(x: number|string){ //return type지정은 함수() : number 여기다가 한다.
-////Narrowing     
-    // if(typeof x === 'string'){  //if 를 줘서 typeof 만들어 사용
-    //     return x+1
-    // }else{
+//readonly - 그냥 typescript에서만 경고 해주지 JS 에서는 바꿔준다. 
+type Girlfrend = {
+   readonly name : string //readonly 란 절대 수정 할 수 없다.
+}
+const 여친 :  Girlfrend = {
+    name : '카리나'
+}
 
-    // }
-////Assertion (type 덮어쓰기)
-    let array : number[] = [];
-    array[0] = x as number; //as를 사용해서 number로 덮어씀
-    
-} 
+//type변수 uniion 으로 합치기
+type Name = string;
+type Age = number;
 
-console.log('test : ',test2(123));
+type person = Name | Age; // 합치는거 가능 (person 은 string 아니면 number 들어올수 있다 둘다.)
 
-//assertion 용도
-// 1. Narrowing 할때 사용 (변경할 때 사용하는 문법이 아님.)
-// 2. 어떤 타입이 들어올지 100% 알때 사용하는 것임.
+type PositionX = { x : number };
+type PositionY = { y : number };
 
+type NewType = PositionX & PositionY; //object는 and 기호 사용(&)
+                                      //속성을 합친다 = object 를 extend 한다.
+let position : NewType = {x:10, y:30 };
 
+//*type 은 재정의가 불가능 하다!!* 조금 엄격하게 쓸 수 있다.
 
