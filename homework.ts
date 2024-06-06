@@ -68,4 +68,9 @@ let rightType ={
     adult : true
 }
 
-
+//Literal Type 
+//가위바위보 중 1개만 입력 할수 있고,
+//가위바위보만 들어올수 있는 array retrun
+function Test(a : '가위'|'바위'|'보') : ('가위'|'바위'|'보')[]{
+    return ['가위']
+}
