@@ -57,3 +57,11 @@ var Car = /** @class */ (function () {
 var car1 = new Car('소나타', 3000);
 console.log('car : ', car1);
 console.log('tax : ', car1.tax);
+var 오브젝트 = {
+    plus: function (a, b) {
+        return a + b;
+    },
+    minus: function (a, b) {
+        return a - b;
+    }
+};
