@@ -2,10 +2,10 @@
 // 아무것도 파라미터로 입력하지 않고 함수를 사용하면 "이름이 없습니다" 를 출력하는 함수를 만들어봅시다.
 // 파라미터와 return 타입지정도 잘 해봅시다. 
 
-function greet(x?: string) : void{
-    if(x){ 
+function greet(x?: string): void {
+    if (x) {
         console.log(`안녕하세요. ${x} 입니다.`);
-    }else {
+    } else {
         console.log('이름이 없습니다')
     }
 }
@@ -38,16 +38,16 @@ console.log(count('창목'));  // 출력: 2
 // 4. 이 타입은 position 이라는 변경불가능한 속성이 있어야하며 항상 숫자가 담긴 array 자료가 들어와야합니다.  
 // type alias로 만들어보셈 
 
-type typeTest ={
-    color? : string,
-    size : number,
-    readonly position : number[]
+type typeTest = {
+    color?: string,
+    size: number,
+    readonly position: number[]
 }
 
-let Test_typeTest : typeTest = {
-    color : 'black',
-    size : 6,
-    position : [1,2,3]
+let Test_typeTest: typeTest = {
+    color: 'black',
+    size: 6,
+    position: [1, 2, 3]
 }
 
 // 다음을 만족하는 type alias를 만들어보십시오.
@@ -56,21 +56,41 @@ let Test_typeTest : typeTest = {
 // 3. 멋있게 숙제3에서 만들어둔 type alias를 재활용해봅시다.
 
 type rightType = {
-    name : string, 
-    phone : number, 
-    email? : string,
-    adult : boolean
+    name: string,
+    phone: number,
+    email?: string,
+    adult: boolean
 }
-let rightType ={
-    name : 'kim', 
-    phone : 123, 
-    
-    adult : true
+let rightType = {
+    name: 'kim',
+    phone: 123,
+
+    adult: true
 }
 
 //Literal Type 
 //가위바위보 중 1개만 입력 할수 있고,
 //가위바위보만 들어올수 있는 array retrun
-function Test(a : '가위'|'바위'|'보') : ('가위'|'바위'|'보')[]{
+function Test(a: '가위' | '바위' | '보'): ('가위' | '바위' | '보')[] {
     return ['가위']
 }
+
+// 1. 대충 { model : '소나타', price : 3000 } 이렇게 생긴 object를 복사해주는 class를 만들어보십시오.
+// 2. 그리고 복사된 object 자료들은 .tax() 라는 함수를 사용가능한데 현재 object에 저장된 price의 10분의1을 출력해주어야합니다. 
+// 3. model과 price 속성의 타입지정도 알아서 잘 해보십시오. tax() 함수의 return 타입도요. 
+
+class Car {
+    name: string;
+    price: number;
+
+    constructor(name: string, price: number) {
+        this.name = name;
+        this.price = price;
+    }
+    tax(taxprice: number) {
+        return this.price * 0.1
+    }
+}
+let car1 = new Car('소나타', 3000)
+console.log('car : ',car1);
+console.log('tax : ', car1.tax);

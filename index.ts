@@ -1,19 +1,23 @@
-let Link = document.querySelector('.link');
-if(Link instanceof HTMLAnchorElement){ //narrowing 하는 법 [Elment 에 상속되어있는 것들. HTMLAnchorElement 같은거]
-    Link.href = 'https://kakao.com'
+class Person {
+    name: string; //ts 가 js 랑 다른점.
+    
+    constructor(a : string){
+        this.name = a;
+    }
+
+    TestFunction(a : string){
+        console.log('안녕 : ', a);
+    }
+
 }
 
-//EventListener narrowing 하는 법 - ?붙인다 optional
-let btn = document.querySelector('#button');
-btn?.addEventListener('click', function(){
-    
-})
 
-//image 바꿔보기
-let changImg = document.querySelector('#image');
-if(changImg instanceof HTMLImageElement){
 
-    changImg.addEventListener
-        changImg.src ='ttt.jpg';
-    
-}
+let 사람1 = new Person('kim');
+let 사람2 = new Person('park');
+
+
+console.log('t', 사람1);
+console.log('t', 사람2);
+
+사람1.TestFunction('안녕');
