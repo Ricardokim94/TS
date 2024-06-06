@@ -12,3 +12,25 @@ function 내함수(a : 'kim') {
 
 }
 내함수(자료.name)
+
+
+
+type Member = {
+    name : string,
+    age : number,
+    plusOne : (x : number) => number,
+    changeName : () => void
+}
+
+//object 안에 function 만들기
+let 회원 = {
+    name : 'kim',
+    age : 20,
+    plusOne(x: number) : number{ //함수사용 가능 /
+        return x+1
+    },
+    chageName() : void{
+        this.name = 'park'
+    }
+}
+회원.plusOne(1) //이렇게 사용하면 된다.
