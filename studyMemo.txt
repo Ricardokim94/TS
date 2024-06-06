@@ -2,6 +2,9 @@
     npm install --save typescript @types/node @types/react @types/react-dom @types/jest
     npx create-react-app my-app --template typescript
 
+#compile하는법
+    terminal에서 tsc -w
+
 #typescipt 사용법
     terminal open 후 tsc -w 라고 입력
     -> 자동 변환됨. 

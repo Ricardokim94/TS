@@ -25,3 +25,19 @@ function count(x) {
 console.log(count('245')); // 출력: 3
 console.log(count(9567)); // 출력: 4
 console.log(count('창목')); // 출력: 2
+var Test_typeTest = {
+    color: 'black',
+    size: 6,
+    position: [1, 2, 3]
+};
+var rightType = {
+    name: 'kim',
+    phone: 123,
+    adult: true
+};
+//Literal Type 
+//가위바위보 중 1개만 입력 할수 있고,
+//가위바위보만 들어올수 있는 array retrun
+function Test(a) {
+    return ['가위'];
+}
