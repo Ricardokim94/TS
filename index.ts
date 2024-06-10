@@ -122,3 +122,31 @@ function 함수9(parameter : string){
     }
 }
 
+
+
+//public / private 등과 같은 객체지향 언어도 제공.
+class User{
+    public name : string= 'CM'; //public (항상 생략 가능.) / private 은 수정 할 수 없다.
+    private familyName : string = 'kim';
+    constructor(a){
+        this.name = a + this.familyName; //위에 필드값 쓰고 싶으면 this 써야된다.
+    } 
+    이름변경함수(){
+        this.familyName = 'park';
+    }
+}
+
+let User1 = new User('민수');
+User1.이름변경함수();
+console.log(User1);
+
+
+//public 키워드 쓰면 this.어쩌구 생략 가능.
+class Person {
+    constructor(public name){
+        
+    }
+}
+
+let 자식 = new Person('mm');
+console.log(자식);
