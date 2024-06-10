@@ -150,3 +150,30 @@ class Person {
 
 let 자식 = new Person('mm');
 console.log(자식);
+
+
+
+//class 복사해서 쓰는 extends
+class NewUser extends User{ //Class 복사 느낌.
+
+}
+
+
+//proteced
+class User2{
+    protected x = 10; // private와 유사함. 안에서만 x를 쓸수 있다. 
+}                       //다른점 = extends에서는 proteced 쓸수 있다. (private는 x)
+class NewUser2 extends User2{ 
+    doThis(){
+        this.x = 20;
+    }
+}
+//static
+class User3{
+    static x=10; // 자식들이 물려받지 못하게 부모만 사용가능할수 있게 쓸때 static
+    y=20;
+}
+
+let 자식3 = new User3();
+
+//** private static 두개 동시에 사용도 가능하다. */
