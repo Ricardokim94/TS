@@ -46,3 +46,19 @@ function 함수4(x) {
         console.log('이 바이크는 ' + x.color);
     }
 }
+//never 타입
+function 함수5() {
+    throw new Error(); //이게 코드 중간에 실행 중단되는 거임. 강제로 error 내주세요.임
+    while (true) { // 이것도 무한이 도니까 끝나지 않음. = never타입 가능
+    }
+}
+//그럼 이거를 어디다 쓰나? never은 void type 으로 대체 가능해서 쓸 곳은 없다.
+// 어떨때 등장하는지만 알면 됨.
+function 함수9(parameter) {
+    if (typeof parameter == 'string') {
+        console.log(parameter);
+    }
+    else {
+        console.log(parameter); //never 뜸 = 있을수 없다.
+    }
+}
