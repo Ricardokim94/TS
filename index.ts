@@ -177,3 +177,23 @@ class User3{
 let 자식3 = new User3();
 
 //** private static 두개 동시에 사용도 가능하다. */
+
+
+
+
+//타입을 파라미터로 입력하는 Generic
+function 함수6(x : unknown[]){
+    return x[0]
+}
+let a = 함수6([4,5])  //*조심! a는 number 타입이 아니라 unknown 타입이다. narrowing 귀찮으면 그때 Generic쓴다.
+//Generic 예시
+function 함수7<MyType>(x : MyType[]) :MyType{
+    return x[0]
+}
+let generic = 함수7<number>([4,5]) //이게 타입을 파라미터로 입력할수 있는 가로문법이라고 생각!
+//Generic 파라미터 제한두기
+function 함수8<MyType extends number>(x : MyType) { //extends : 우측에 number라는 속성이 있는지 check 한다.
+    return x-1      //narrowing 으로 인정해줌. 
+}
+let tt = 함수8<number>(100)
+
