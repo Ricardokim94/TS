@@ -2,6 +2,9 @@
     npm install --save typescript @types/node @types/react @types/react-dom @types/jest
     npx create-react-app my-app --template typescript
 
+##기존 project에 typescript 사용하고 싶으면
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+
 #compile하는법
     terminal에서 tsc -w
 
@@ -71,3 +74,9 @@
     function 함수2(){
   
     }  // a() 가 함수2()가 될꺼니까. 이게 콜백 함수의 개념.
+
+
+############################################################
+#react 로 typescipt 만들어 보기
+    - JSX (html)문법을 쓰는 파일은 .tsx
+    - 일반 문법은 .ts
