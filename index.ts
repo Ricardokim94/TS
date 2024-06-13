@@ -1,20 +1,37 @@
-//index signature 이란 모든타입이 string 일때 하나하나 다 string 하기 귀찮으니까 한번에 type 주는 것 
-interface StringOnly {
-    [key :string] : string|number //이렇게 사용함.
-   
+
+let obj = {name : 'kim', age : 20}
+Object.keys(obj) //object에 있는 key값들을 출력해줄 때 사용
+
+//ketof 
+interface Person {
+    age : number,
+    name : string
 }
-let User = {
-    name : 'kim',
-    age : 20,
-    location : 'seoul'
+type PersonKeys = keyof Person //key 값을 꺼내와서 유니온 타입으로 남겨줌
+let a : PersonKeys = 'name'
+
+
+//타입 변환하는 방법
+type Test = {
+    color : boolean,
+    model : boolean,
+    price : boolean | number
 }
-////////////////////////////////////////////////////////////////////////////////
-//이게 조금 더 정확한 방법
-interface StringOnly2 {
-    [key :number] : string //이렇게 사용함.
+
+type TypeChanger<MyType> = {
+    [key in keyof MyType] : string
 }
-let User2 = {
-    0 : 'kim',
-    1 : '20',
-    2 : 'seoul'
-}
+type 새로운타입 = TypeChanger<Test>
+
+
+
+//조건문으로 타입 만들기 (삼항연산자 이용)
+type Age2<T> = T extends string ? string : unknown; //타입파라미터 타입 검사할때는 extends 사용해야됨.
+
+let t : Age2<string> //string
+let t2 : Age2<number> //unkwon
+
+//infer (조건문에서 쓸수 있는 키워드) : type을 추출하는 역할
+type 타입추출<T> = T extends (infer R)[] ? R : unknown //T에서 타입 뽑아달라는 소리(왼쪽에서)
+    //타입을 뽑아서 R이라는 곳에 담은거임 - string 이되겠지?
+type a2 = 타입추출<string[]>
