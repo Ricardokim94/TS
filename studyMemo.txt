@@ -80,3 +80,10 @@ npm install --save typescript @types/node @types/react @types/react-dom @types/j
 #react 로 typescipt 만들어 보기
     - JSX (html)문법을 쓰는 파일은 .tsx
     - 일반 문법은 .ts
+
+
+#typescipt에서 jquery 같은 외부 라이브러리 사용해서 할수 있는 방법
+    typescipt 검색해서 그 사이트 들어가서 jquery 보면 된다.
+    - npm i @types/jquery 이렇게 terminal에 입력하면
+    -> node_modules 가 뜨고 거기에 types들이 들어가 있다.
+    

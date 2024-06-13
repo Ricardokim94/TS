@@ -4,6 +4,8 @@
         "target": "es5",
         "module": "commonjs",
         "noImplicitAny": false, //any라는 타입이 의도치 않게 발생할 경우 에러를 띄워주는 설정
-        "strictNullChecks": true //null
+        "strictNullChecks": true, //null
+        "declaration": true, //파일을 만들고 저장할때, 자동으로 d.ts에 만들어 주는 것 =true
+        "typeRoots": ["./types/common"] //여기에 있는 이 폴더는 global 하게 만들어 주세요. 라는 뜻임.
     }
 } 
